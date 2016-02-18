@@ -1,0 +1,86 @@
+1.配置litepal.xml
+	assets目录下面新建一个litepal.xml文件,内容如下
+	<?xml version="1.0" encoding="utf-8"?>  
+	<litepal>  
+	    <dbname value="demo" ></dbname>  
+	  
+	    <version value="1" >
+	    	加入新的model,递增此版本号完成自动升级
+	    </version>  
+	    <list>  
+	    </list>  
+	</litepal> 
+2.替换manifest中的application为org.litepal.LitePalApplication或者自己继承org.litepal.LitePalApplication
+3.编写实体类,含有setter,getter的类，需要写一个private int id属性来作为主键，根据LitePal的数据类型支持，
+	可以进行对象关系映射的数据类型一共有8种，
+	int、short、long、float、double、boolean、String和Date。
+	只要是声明成这8种数据类型的字段都会被自动映射到数据库表中，并不需要进行任何额外的配置。
+	有声明成private修饰符的字段才会被映射到数据库表中，如果你有某一个字段不想映射的话，
+	只需要将它改成public、protected或default修饰符就可以了。
+4.litepal.xml文件中进行映射
+	<list> 
+		 <mapping class="com.example.databasetest.model.News"></mapping>   
+	</list> 
+5.调用如下代码获取数据库访问
+	SQLiteDatabase db = Connector.getDatabase();  
+6.只要在model中写好引用关系，数据库表的映射则会自动创建
+7.要对数据库操作，model类继承DataSupport
+8.更新操作
+	//更新ID为2的行
+	ContentValues values = new ContentValues();  
+	values.put("title", "今日iPhone6发布");  
+	DataSupport.update(News.class, values, 2);  
+	//更新匹配条件的行
+	ContentValues values = new ContentValues();  
+	values.put("title", "今日iPhone6 Plus发布");  
+	DataSupport.updateAll(News.class, values, "title = ? and commentcount > ?", "今日iPhone6发布", "0");
+	//获取通过实体来更新
+	News updateNews = new News();  
+	updateNews.setTitle("今日iPhone6发布");  
+	updateNews.update(2);    
+	//又或者
+	News updateNews = new News();  
+	updateNews.setTitle("今日iPhone6发布");  
+	updateNews.updateAll("title = ? and commentcount > ?", "今日iPhone6发布", "0");  	
+9.删除数据
+	//删除News实体中id为2的数据,该实体如果被关联，有外键的表中数据也会一并删除
+	DataSupport.delete(News.class, 2);
+	//或者
+	DataSupport.deleteAll(News.class, "title = ? and commentcount = ?", "今日iPhone6发布", "0");
+10.查询
+	//查询id为1的
+	News news = DataSupport.find(News.class, 1);  
+	//获取第一条
+	News firstNews = DataSupport.findFirst(News.class);
+	//获取最后一条
+	News lastNews = DataSupport.findLast(News.class);  
+	//条件查询,数字均为ID
+	List<News> newsList = DataSupport.findAll(News.class, 1, 3, 5, 7);  
+	//where 查询
+	List<News> newsList = DataSupport.where("commentcount > ?", "0").find(News.class)
+	//指定列查询
+	List<News> newsList = DataSupport.select("title", "content")  
+        .where("commentcount > ?", "0").find(News.class);  
+    //排序
+    List<News> newsList = DataSupport.select("title", "content")  
+        .where("commentcount > ?", "0")  
+        .order("publishdate desc").find(News.class); 
+   //分页
+   List<News> newsList = DataSupport.select("title", "content")  
+        .where("commentcount > ?", "0")  
+        .order("publishdate desc").limit(10).offset(10)  
+        .find(News.class); 
+   //表关联查询 设置参数为true进行表关联
+   News news = DataSupport.find(News.class, 1, true);  
+   List<Comment> commentList = news.getCommentList();  
+   //或者采用懒加载方式,在Module中参考如下方式
+   public List<Comment> getComments() {  
+        return DataSupport.where("news_id = ?", String.valueOf(id)).find(Comment.class);  
+   }  
+   //原生查询
+   Cursor cursor = DataSupport.findBySQL("select * from news where commentcount>?", "0"); 
+11.统计查询
+	int result = DataSupport.count(News.class); 
+	int result = DataSupport.where("commentcount = ?", "0").count(News.class); 
+	int result = DataSupport.sum(News.class, "commentcount", int.class);
+	double result = DataSupport.average(News.class, "commentcount"); 

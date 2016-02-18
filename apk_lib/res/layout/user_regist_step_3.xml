@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp" >
+
+    <EditText
+        android:id="@+id/password"
+        style="@style/input_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_height"
+        android:hint="@string/user_regist_input_password"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp" />
+	<EditText
+        android:id="@+id/repassword"
+        style="@style/input_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_height"
+        android:hint="@string/user_regist_input_repassword"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp" />
+	<apk.lib.widget.RoundButton
+        android:id="@+id/submitRegist"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_margin="10dp"
+        app:bgcolor="@color/grey_200"
+        app:highlightMode="background"
+        app:radius="8"
+        app:text="@string/user_regist_doit"
+        app:textColor="@color/grey_700" 
+        android:enabled="false"/>
+</LinearLayout>

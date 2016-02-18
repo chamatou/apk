@@ -1,0 +1,15 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+	<!-- <style name="cmator_biz_theme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="windowActionBar">false</item>
+  		<item name="windowNoTitle">true</item>
+        <item name="android:textColor">@color/grey_900</item>
+    </style> -->
+    <style name="primary_button" parent="@android:style/ButtonBar">
+        <item name="android:background">@color/primary</item>
+        <item name="android:textColor">@android:style/ButtonBar</item>
+    </style>
+</resources>

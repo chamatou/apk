@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">商家版</string>
+
+    <string name="module_main">首页</string>
+    <string name="module_message">消息</string>
+    <string name="module_home">我的</string>
+    
+    <string name="module_main_title">商家首页</string>
+    <string name="module_message_title">消息中心</string>
+    <string name="module_home_title">个人中心</string>
+</resources>

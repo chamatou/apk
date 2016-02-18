@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_background">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionBarSize"
+        android:background="@color/primary"
+        android:minHeight="@dimen/actionBarSize"
+        android:layout_alignParentTop="true">
+        <TextView
+            android:id="@+id/toolbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/user_regist_text_user_regist"
+            android:textColor="@color/grey_white"
+            android:textSize="18sp" />
+        <ImageView 
+            android:id="@+id/toolbarMenu"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            />
+    </android.support.v7.widget.Toolbar>
+    <FrameLayout
+        android:id="@+id/tabContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        />
+    <android.support.v4.app.FragmentTabHost
+        android:id="@+id/tabHost"
+        android:layout_width="match_parent"  
+        android:layout_height="wrap_content"
+        android:background="@color/divider"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="1px"
+        >
+     </android.support.v4.app.FragmentTabHost>
+</RelativeLayout>

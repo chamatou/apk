@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:layout_marginTop="15dp"
+    android:orientation="vertical"
+    >
+	<RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content">
+	    <EditText
+	        android:id="@+id/vcode"
+	        style="@style/input_text"
+	        android:layout_width="match_parent"
+	        android:layout_height="@dimen/input_height"
+	        android:hint="@string/user_regist_input_vcode"
+	        android:paddingLeft="10dp"
+	        android:inputType="number"/>
+		<TextView 
+		    android:id="@+id/btn_resend"
+		    android:layout_width="wrap_content"
+		    android:layout_height="38dp"
+		    android:text="@string/user_regist_reget_vcode"
+		    android:background="@color/grey_300"
+		    android:textColor="@color/grey_700"
+		    android:layout_alignParentRight="true"
+		    android:gravity="center"
+		    android:paddingLeft="10dp"
+		    android:paddingRight="10dp"
+		    android:layout_marginRight="10dp"
+		    android:layout_centerVertical="true"
+		    />
+	</RelativeLayout>
+	<apk.lib.widget.RoundButton
+        android:id="@+id/submitCode"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_margin="10dp"
+        app:bgcolor="@color/grey_200"
+        app:highlightMode="background"
+        app:radius="8"
+        app:text="@string/user_regist_submit_vcode"
+        app:textColor="@color/grey_700" 
+        android:enabled="false"/>
+</LinearLayout>

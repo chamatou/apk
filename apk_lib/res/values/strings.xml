@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 通用信息 -->
+    <string name="done">确定</string>
+    <string name="cancel">取消</string>
+    <string name="warn">警告</string>
+    <string name="message">消息</string>
+    <!-- 用户登陆 -->
+    <string name="user_login_text_user_login">用户登陆</string>
+    <string name="user_login_text_forget_password">忘记密码</string>
+    <string name="user_login_text_regist_now">立即注册</string>
+    <string name="user_login_btn_user_login">登陆</string>
+    <string name="user_login_hint_username">请输入登陆手机号码</string>
+    <string name="user_login_hint_password">请输入登陆密码</string>
+    <!-- 用户注册 -->
+    <string name="user_regist_text_user_regist">用户注册</string>
+    <string name="user_regist_text_regist_step_1">输入手机号</string>
+    <string name="user_regist_text_regist_step_2">输入验证码</string>
+    <string name="user_regist_text_regist_step_3">设置密码</string>
+    <string name="user_regist_send_code">发送验证码</string>
+    <string name="user_regist_hint_input_phone">请输入手机号</string>
+    <string name="user_regist_read_protol">我已阅读并同意</string>
+    <string name="user_regist_protol">用户协议</string>
+    <string name="user_regist_input_vcode">请输入验证码</string>
+    <string name="user_regist_reget_vcode">重新获取(%s)</string>
+    <string name="user_regist_submit_vcode">提交验证码</string>
+    <string name="user_regist_input_password">设置密码</string>
+    <string name="user_regist_input_repassword">确认密码</string>
+    <string name="user_regist_doit">注册</string>
+    <string name="user_regist_passwd_not_match">两次密码输入不一致</string>
+</resources>

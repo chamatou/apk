@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 用户注册步骤1 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_background"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/registPhoneNumber"
+        style="@style/input_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_height"
+        android:layout_marginTop="15dp"
+        android:hint="@string/user_regist_hint_input_phone"
+        android:inputType="phone"
+        android:paddingLeft="10dp" />
+
+    <apk.lib.widget.RoundButton
+        android:id="@+id/sendCode"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_margin="10dp"
+        app:bgcolor="@color/grey_200"
+        app:highlightMode="background"
+        app:radius="8"
+        app:text="@string/user_regist_send_code"
+        app:textColor="@color/grey_700" 
+        android:enabled="false"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal" >
+        <CheckBox
+            android:id="@+id/isReadProtol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_regist_read_protol" 
+            android:textColor="@color/grey_700"
+            android:textSize="14sp"
+            android:checked="true"
+		/>
+        <TextView 
+            android:id="@+id/protol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_regist_protol"
+            android:textColor="@color/indigo_800"
+            android:textSize="14sp"
+            />
+    </LinearLayout>
+
+</LinearLayout>

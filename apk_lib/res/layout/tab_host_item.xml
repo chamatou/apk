@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 主题框架底部按钮定义 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="2dp" >
+	<FrameLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    >
+	    <ImageView
+	        android:id="@+id/tab_item_img"
+	        android:layout_width="28dp"
+	        android:layout_height="28dp"
+	        android:layout_marginTop="2dp"
+	        android:layout_gravity="center"
+	        android:focusable="false" >
+	    </ImageView>
+	    <!-- 数量小图标
+	    <LinearLayout 
+	        android:id="@+id/notify_null"
+	 	    android:layout_width="8dp"
+	 	    android:layout_height="8dp"
+	 	    android:layout_gravity="center"
+	 	    android:layout_marginRight="-10dp"
+	 	    android:layout_marginEnd="-10dp"
+	 	    android:layout_marginTop="-8dp"
+	 	    android:orientation="horizontal"
+	 	    android:gravity="center_horizontal"
+	 	    android:background="@drawable/text_shape_bg"
+	 	 />
+		<TextView 
+		     android:id="@+id/notify_text"
+	 	     android:layout_width="wrap_content"
+	 	     android:layout_height="wrap_content"
+	 	     android:background="@drawable/text_shape_bg"
+	 	     android:text="10"
+	 	     android:layout_gravity="center"
+	 	     android:layout_marginRight="-10dp"
+	 	     android:layout_marginEnd="-10dp"
+	 	     android:layout_marginTop="-6dp"
+	 	     android:paddingLeft="2dp"
+	 	     android:paddingRight="2dp"
+	 	     android:textSize="10sp"
+	 	     android:textColor="@color/text_white"
+	 	     />	
+	 	  数量小图标 -->
+	</FrameLayout>
+    <TextView
+        android:id="@+id/tab_item_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@drawable/bottom_menu_text_bg"
+        android:textSize="12sp" >
+    </TextView>
+
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- thin arrow -->
+    <string name="fa_angle_right">{fa-angle-right}</string>
+    <string name="fa_angle_up">{fa-angle-up}</string>
+    <string name="fa_angle_left">{fa-angle-left}</string>
+    <string name="fa_angle_down">{fa-angle-down}</string>
+    <!-- thick arrow -->
+    <string name="fa_caret_down">{fa-caret-down}</string>
+    <string name="fa_caret_up">{fa-caret-up}</string>
+    <string name="fa_caret_left">{fa-caret-left}</string>
+    <string name="fa_caret_right">{fa-caret-right}</string>
+</resources>
