@@ -63,6 +63,6 @@ public class ItemActionIconButton extends RippleView {
 		if(d_action!=null){
 			action.setBackgroundDrawable(d_action);
 		}
-		
+		ta.recycle();
 	}
 }

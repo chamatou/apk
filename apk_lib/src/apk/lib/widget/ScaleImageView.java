@@ -20,9 +20,8 @@ import android.widget.ImageView;
 /**
  * 可缩放的ImageView
  */
-public class ScaleImageView extends ImageView implements
-		OnScaleGestureListener, OnTouchListener,
-		ViewTreeObserver.OnGlobalLayoutListener
+public class ScaleImageView extends ImageView
+		implements OnScaleGestureListener, OnTouchListener, ViewTreeObserver.OnGlobalLayoutListener
 
 {
 	private static final String TAG = ScaleImageView.class.getSimpleName();
@@ -70,34 +69,29 @@ public class ScaleImageView extends ImageView implements
 	public ScaleImageView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		super.setScaleType(ScaleType.MATRIX);
-		mGestureDetector = new GestureDetector(context,
-				new SimpleOnGestureListener() {
-					@Override
-					public boolean onDoubleTap(MotionEvent e) {
-						if (isAutoScale == true)
-							return true;
+		mGestureDetector = new GestureDetector(context, new SimpleOnGestureListener() {
+			@Override
+			public boolean onDoubleTap(MotionEvent e) {
+				if (isAutoScale == true)
+					return true;
 
-						float x = e.getX();
-						float y = e.getY();
-						Log.e("DoubleTap", getScale() + " , " + initScale);
-						if (getScale() < SCALE_MID) {
-							ScaleImageView.this.postDelayed(
-									new AutoScaleRunnable(SCALE_MID, x, y), 16);
-							isAutoScale = true;
-						} else if (getScale() >= SCALE_MID
-								&& getScale() < SCALE_MAX) {
-							ScaleImageView.this.postDelayed(
-									new AutoScaleRunnable(SCALE_MAX, x, y), 16);
-							isAutoScale = true;
-						} else {
-							ScaleImageView.this.postDelayed(
-									new AutoScaleRunnable(initScale, x, y), 16);
-							isAutoScale = true;
-						}
+				float x = e.getX();
+				float y = e.getY();
+				Log.e("DoubleTap", getScale() + " , " + initScale);
+				if (getScale() < SCALE_MID) {
+					ScaleImageView.this.postDelayed(new AutoScaleRunnable(SCALE_MID, x, y), 16);
+					isAutoScale = true;
+				} else if (getScale() >= SCALE_MID && getScale() < SCALE_MAX) {
+					ScaleImageView.this.postDelayed(new AutoScaleRunnable(SCALE_MAX, x, y), 16);
+					isAutoScale = true;
+				} else {
+					ScaleImageView.this.postDelayed(new AutoScaleRunnable(initScale, x, y), 16);
+					isAutoScale = true;
+				}
 
-						return true;
-					}
-				});
+				return true;
+			}
+		});
 		mScaleGestureDetector = new ScaleGestureDetector(context, this);
 		this.setOnTouchListener(this);
 	}
@@ -105,7 +99,6 @@ public class ScaleImageView extends ImageView implements
 	/**
 	 * 自动缩放的任务
 	 * 
-	 * @author zhy
 	 * 
 	 */
 	private class AutoScaleRunnable implements Runnable {
@@ -174,8 +167,7 @@ public class ScaleImageView extends ImageView implements
 		/**
 		 * 缩放的范围控制
 		 */
-		if ((scale < SCALE_MAX && scaleFactor > 1.0f)
-				|| (scale > initScale && scaleFactor < 1.0f)) {
+		if ((scale < SCALE_MAX && scaleFactor > 1.0f) || (scale > initScale && scaleFactor < 1.0f)) {
 			/**
 			 * 最大值最小值判断
 			 */
@@ -188,8 +180,7 @@ public class ScaleImageView extends ImageView implements
 			/**
 			 * 设置缩放比例
 			 */
-			mScaleMatrix.postScale(scaleFactor, scaleFactor,
-					detector.getFocusX(), detector.getFocusY());
+			mScaleMatrix.postScale(scaleFactor, scaleFactor, detector.getFocusX(), detector.getFocusY());
 			checkBorderAndCenterWhenScale();
 			setImageMatrix(mScaleMatrix);
 		}
@@ -404,8 +395,7 @@ public class ScaleImageView extends ImageView implements
 
 			Log.e(TAG, "initScale = " + initScale);
 			mScaleMatrix.postTranslate((width - dw) / 2, (height - dh) / 2);
-			mScaleMatrix.postScale(scale, scale, getWidth() / 2,
-					getHeight() / 2);
+			mScaleMatrix.postScale(scale, scale, getWidth() / 2, getHeight() / 2);
 			// 图片移动至屏幕中心
 			setImageMatrix(mScaleMatrix);
 			once = false;

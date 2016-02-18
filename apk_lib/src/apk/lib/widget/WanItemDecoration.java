@@ -11,7 +11,6 @@ import android.view.View;
 import apk.lib.utils.OSUtils;
 /**
  * 分割线
- * @author kaiyi
  *
  */
 public class WanItemDecoration extends RecyclerView.ItemDecoration {

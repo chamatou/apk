@@ -70,6 +70,7 @@ public class ItemActionFontIconButton extends RippleView implements WidgetAction
 		}
 		trigger=ta.getInt(R.styleable.ItemActionButton_iab_trigger, -1);
 		actionData=ta.getString(R.styleable.ItemActionButton_iab_action_data);
+		ta.recycle();
 	}
 	
 	
