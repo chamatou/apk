@@ -113,4 +113,9 @@
     <declare-styleable name="GifImageView"> 
         <attr name="auto_play" format="boolean"></attr> 
     </declare-styleable> 
+    <!-- 带圆角背景的IconTextView -->
+    <declare-styleable name="RoundIconTextView"> 
+        <attr name="radiusSize" format="integer"/>
+        <attr name="backgroundColor" format="color"/>
+    </declare-styleable>
 </resources>
