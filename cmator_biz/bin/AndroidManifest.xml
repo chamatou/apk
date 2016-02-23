@@ -19,7 +19,7 @@
     <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
      <application
-        android:name="cn.chamatou.lib.DefaultApplication"
+        android:name="apk.lib.DefaultApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -28,7 +28,7 @@
             android:name="com.amap.api.v2.apikey"
             android:value="88e435012613c20119fd948863daf1a0"/>
         <activity
-            android:name="cn.chamatou.biz.activity.MapActivity"
+            android:name="cn.chamatou.biz.activity.BizMainFrameActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
